@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $result = $crud->editAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty);
     //Redirect to index.php
     if ($result) {
-        header("Location: viewrecords.php");
+        header("Location: dashboard.php");
     } else {
         //echo 'error';
         include 'includes/errormessage.php';

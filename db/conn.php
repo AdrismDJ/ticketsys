@@ -2,7 +2,7 @@
 
 // Development Connection
 $host = "localhost";
-$db = "attendance_db";
+$db = "ticketsys";
 $user = "root";
 $pass = "";
 $charset = "utf8mb4";
@@ -31,5 +31,8 @@ $crud = new crud($pdo);
 $user = new user($pdo);
 
 $user->insertUser("admin", "password");
+$user->insertUser("Adrian", "password");
+$user->insertUser("Barbara", "password");
+$user->insertUser("Pamela", "password");
 
 ?> 

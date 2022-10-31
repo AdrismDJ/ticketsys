@@ -5,7 +5,7 @@ require_once 'db/conn.php';
 if (!isset($_GET['id'])) {
     //echo 'error';
     include 'includes/errormessage.php';
-    header("Location: viewrecords.php");
+    header("Location: dashboard.php");
 } else {
     //Get ID values
     $id = $_GET['id'];
@@ -14,7 +14,7 @@ if (!isset($_GET['id'])) {
     $result = $crud->deleteAttendee($id);
     //Redirect to list
     if ($result) {
-        header("Location: viewrecords.php");
+        header("Location: dashboard.php");
     } else {
         include 'includes/errormessage.php';
     }
