@@ -11,20 +11,24 @@ class crud
     }
 
     // function to insert a new record into the attendee database
-    public function insertAttendees($fname, $lname, $dob, $email, $contact, $specialty)
+    public function insertTickets($cliente, $correo, $telefono, $equipo, $serie, $servicio, $estimado, $descripcion, $actualizado, $estatus)
     {
         try {
             // define sql statement to be executed
-            $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id) VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
+            $sql = "INSERT INTO tickets(cliente,correo,telefono,equipo,serie,servicio,estimado,descripcion,actualizado,estatus) VALUES (:cliente,:correo,:telefono,:equipo,:serie,:servicio,:estimado,:descripcion,:actualizado,:estatus)";
             // prepare the sql statement for execution
             $stmt = $this->db->prepare($sql);
             //bind all placeholders to the actual values
-            $stmt->bindparam(':fname', $fname);
-            $stmt->bindparam(':lname', $lname);
-            $stmt->bindparam(':dob', $dob);
-            $stmt->bindparam(':email', $email);
-            $stmt->bindparam(':contact', $contact);
-            $stmt->bindparam(':specialty', $specialty);
+            $stmt->bindparam(':cliente', $cliente);
+            $stmt->bindparam(':correo', $correo);
+            $stmt->bindparam(':telefono', $telefono);
+            $stmt->bindparam(':equipo', $equipo);
+            $stmt->bindparam(':serie', $serie);
+            $stmt->bindparam(':servicio', $servicio);
+            $stmt->bindparam(':estimado', $estimado);
+            $stmt->bindparam(':descripcion', $descripcion);
+            $stmt->bindparam(':actualizado', $actualizado);
+            $stmt->bindparam(':estatus', $estatus);
             // execute statement
             $stmt->execute();
             return true;
