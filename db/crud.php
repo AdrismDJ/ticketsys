@@ -60,9 +60,6 @@ class crud
         }
     }
 
-
-
-
     public function getTickets()
     {
         try {
@@ -74,6 +71,22 @@ class crud
             return false;
         }
     }
+
+    public function getTicketDetails($folio)
+    {
+        try {
+            $sql = "SELECT * FROM tickets WHERE folio = :folio";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':folio', $folio);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
 
     public function getAttendeeDetails($id)
     {

@@ -28,7 +28,7 @@ $results = $crud->getTickets();
                 <td><?php echo $r['cliente'] ?></td>
                 <td><?php echo $r['estatus'] ?></td>
                 <td>
-                    <a href="view.php?id=<?php echo $r['folio'] ?>" class="btn btn-primary">View</a>
+                    <a href="view.php?folio=<?php echo $r['folio'] ?>" class="btn btn-primary">Revisar</a>
                     <!--<a href="edit.php?id=<?php echo $r['folio'] ?>" class="btn btn-warning">Edit</a>
                     <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['folio'] ?>" class="btn btn-danger">Delete</a>-->
                 </td>
