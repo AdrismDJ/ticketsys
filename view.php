@@ -21,13 +21,13 @@ if (!isset($_GET['folio'])) {
             <p class="card-text">
                 Correo: <?php echo $result['correo']; ?><br>
                 Teléfono: <?php echo $result['telefono']; ?>
-                Equipo: <?php echo $result['correo']; ?><br>
-                Número de Serie: <?php echo $result['correo']; ?><br>
-                Servicio: <?php echo $result['correo']; ?><br>
-                Precio Estimado: <?php echo $result['correo']; ?><br>
-                Descripción: <?php echo $result['correo']; ?><br>
+                Equipo: <?php echo $result['equipo']; ?><br>
+                Número de Serie: <?php echo $result['serie']; ?><br>
+                Servicio: <?php echo $result['servicio']; ?><br>
+                Precio Estimado: <?php echo $result['estimado']; ?><br>
+                Descripción: <?php echo $result['descripcion']; ?><br>
                 Actualizado: <?php echo $result['actualizado']; ?><br>
-                Estatus: <?php echo $result['correo']; ?><br>
+                Estatus: <?php echo $result['estatus']; ?><br>
                 
             </p>
         </div>
