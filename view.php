@@ -20,7 +20,7 @@ if (!isset($_GET['folio'])) {
             <h6 class="card-subtitle mb-3 text-muted">Cliente: <?php echo $result['cliente']; ?></h6>
             <p class="card-text">
                 Correo: <?php echo $result['correo']; ?><br>
-                Teléfono: <?php echo $result['telefono']; ?>
+                Teléfono: <?php echo $result['telefono']; ?><br>
                 Equipo: <?php echo $result['equipo']; ?><br>
                 Número de Serie: <?php echo $result['serie']; ?><br>
                 Servicio: <?php echo $result['servicio']; ?><br>
