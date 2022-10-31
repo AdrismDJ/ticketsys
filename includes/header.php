@@ -17,7 +17,7 @@ include_once 'includes/session.php' ?>
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="css/site.css" />
 
-    <title>Attendance - <?php echo $title ?></title>
+    <title>TicketSys - <?php echo $title ?></title>
 </head>
 
 <body>
@@ -27,21 +27,22 @@ include_once 'includes/session.php' ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">IT Conference</a>
+                <a class="navbar-brand" href="dashboard.php">TicketSys</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                        <a class="nav-link" href="viewrecords.php">View Attendees</a>
+                        <a class="nav-link active" href="dashboard.php">Dashboard</a>
+                        <a class="nav-link" href="registration.php">Registrar</a>
+                        <a class="nav-link" href="#">Historial</a>
                     </div>
                     <div class="navbar-nav ms-auto">
                     <?php
                         if(!isset($_SESSION['userid'])){
                     ?>
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="index.php">Login</a>
                     <?php } else { ?>
                         <a class="nav-link" href="#"><span> Hello <?php echo $_SESSION['username']?>!</span></a>
                         <a class="nav-link" href="logout.php">Logout</a>
