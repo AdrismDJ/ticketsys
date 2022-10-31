@@ -1,34 +1,40 @@
 <?php
-$title = 'View Records';
+$title = 'View Tickets';
 
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php'; 
 require_once 'db/conn.php';
 
 // Get attendee by Id
-if (!isset($_GET['id'])) {
+if (!isset($_GET['folio'])) {
     echo "<h1 class='text-danger'>Please check details and try again</h1>";
 } else {
-    $id = $_GET['id'];
-    $result = $crud->getAttendeeDetails($id);
+    $folio = $_GET['folio'];
+    $result = $crud->getTicketDetails($folio); 
 ?>
 
-    <div class="card" style="width: 18rem;">
+
+    <div class="card" style="width: 30rem;">
         <div class="card-body">
-            <h5 class="card-title"><?php echo $result['firstname'] . " " . $result['lastname']; ?></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><?php echo $result['name']; ?></h6>
+            <h5 class="card-title">Folio: <?php echo $result['folio']; ?></h5>
+            <h6 class="card-subtitle mb-3 text-muted">Cliente: <?php echo $result['cliente']; ?></h6>
             <p class="card-text">
-                Date of Birth: <?php echo $result['dateofbirth']; ?><br>
-                Email: <?php echo $result['emailaddress']; ?><br>
-                Contact Number: <?php echo $result['contactnumber']; ?>
+                Correo: <?php echo $result['correo']; ?><br>
+                Teléfono: <?php echo $result['telefono']; ?>
+                Equipo: <?php echo $result['correo']; ?><br>
+                Número de Serie: <?php echo $result['correo']; ?><br>
+                Servicio: <?php echo $result['correo']; ?><br>
+                Precio Estimado: <?php echo $result['correo']; ?><br>
+                Descripción: <?php echo $result['correo']; ?><br>
+                Actualizado: <?php echo $result['actualizado']; ?><br>
+                Estatus: <?php echo $result['correo']; ?><br>
+                
             </p>
         </div>
     </div>
 
     <br>
-    <a href="dashboard.php" class="btn btn-info">Back to List</a>
-    <a href="edit.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-warning">Edit</a>
-    <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $result['attendee_id'] ?>" class="btn btn-danger">Delete</a>
+    <a href="dashboard.php" class="btn btn-info">Regreso</a>
 
 <?php } ?>
 
