@@ -1,68 +1,67 @@
 <?php
-$title = 'Index';
+$title = 'Registration';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php'; 
 require_once 'db/conn.php';
 
-$results = $crud->getSpecialties();
+// $results = $crud->getSpecialties();
 ?>
-
-<!--
-    - First Name. 
-    - Last Name. 
-    - Date of Birth (Use DatePicker). 
-    - Speciality (Database Admin, Software Developer, Web Administrator, Other). 
-    - Email Address. 
-    - Contact Number. 
--->
 
 <h1 class="text-center">Registrar Ticket </h1>
 
-<!-- GET and POST need the property name to recognize the value that was submitted -->
-<!-- Using GET will post it in the URL, but is really insecure to use this, better use POST -->
 <form method="post" action="success.php">
     <div class="mb-3">
-        <label for="firstName" class="form-label">First Name</label>
-        <input required type="text" class="form-control" id="firstName" name="firstname">
+        <label for="cliente" class="form-label">Cliente</label>
+        <input required type="text" class="form-control" id="cliente" name="cliente">
     </div>
     <div class="mb-3">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input required login attempstype="text" class="form-control" id="lastName" name="lastname">
+        <label for="correo" class="form-label">Correo</label>
+        <input required type="email" class="form-control" id="correo" name="correo" aria-describedby="emailHelp">
     </div>
-    <div class=" mb-3">
-        <label for="dob" class="form-label">Date of Birth</label>
-        <input type="text" class="form-control" id="dob" name="dob">
-    </div>
-
     <div class="mb-3">
-        <label for="specialty" class="form-label">Area of Expertise</label>
-        <select class="form-select" aria-label="Default select example" id="specialty" name="specialty">
-
-            <?php while ($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
-                <option value="<?php echo $r['specialty_id'] ?>"><?php echo $r['name']; ?></option>
-            <?php } ?>
-            <!--
-            <option value="1">Database Admin</option>
-            <option value="2">Software Developer</option>
-            <option value="3">Web Administrator</option>
-            <option value="4">Other</option>
-
-            -->
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" aria-describedby="phoneHelp">
+    </div>
+    <div class="mb-3">
+        <label for="equipo" class="form-label">Equipo</label>
+        <select class="form-select" aria-label="Default select example" id="equipo" name="equipo">
+            <option value="Motorola">Motorola</option>
+            <option value="Nokia">Nokia</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
         </select>
     </div>
     <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input required type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="serie" class="form-label">Serie</label>
+        <input required type="text" class="form-control" id="serie" name="serie">
     </div>
     <div class="mb-3">
-        <label for="phone" class="form-label">Contact Number</label>
-        <input type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp">
-        <small id="phoneHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="servicio" class="form-label">Servicio</label>
+        <input required type="text" class="form-control" id="servicio" name="servicio">
     </div>
+    <div class="mb-3">
+        <label for="estimado" class="form-label">Estimado</label>
+        <input required type="number" class="form-control" id="estimado" name="estimado">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input required type="text" class="form-control" id="descripcion" name="descripcion">
+    </div>
+    <div class=" mb-3">
+        <label for="actualizado" class="form-label">Actualizado</label>
+        <input type="date" class="form-control" id="actualizado" name="actualizado">
+    </div>
+    <div class="mb-3">
+        <label for="estatus" class="form-label">Estatus</label>
+        <select class="form-select" aria-label="Default select example" id="estatus" name="estatus">
+            <option value="Abierto">Abierto</option>
+            <option value="Cerrado">Cerrado</option>
 
+        </select>
+    </div>
     <div class="d-grid gap-2">
-        <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary btn-block">Guardar Registro</button>
+        <a href="dashboard.php" class="btn btn-danger">Cancelar</a>
     </div>
 </form>
 

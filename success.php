@@ -7,14 +7,19 @@ require_once 'db/conn.php';
 
 if (isset($_POST['submit'])) {
     //extract values from the $_POST array
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $dob = $_POST['dob'];
-    $email = $_POST['email'];
-    $contact = $_POST['phone'];
-    $specialty = $_POST['specialty'];
+    $cliente = $_POST['cliente'];
+    $correo = $_POST['correo'];
+    $telefono = $_POST['telefono'];
+    $equipo = $_POST['equipo'];
+    $serie = $_POST['serie'];
+    $servicio = $_POST['servicio'];
+    $estimado = $_POST['estimado'];
+    $descripcion = $_POST['descripcion'];
+    $actualizado = $_POST['actualizado'];
+    $estatus = $_POST['estatus'];
+
     //Call function to insert and track if success or not
-    $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
+    $isSuccess = $crud->insertTickets($cliente, $correo, $telefono, $equipo, $serie, $servicio, $estimado, $descripcion, $actualizado, $estatus);
 
     if ($isSuccess) {
         include 'includes/successmessage.php';
@@ -24,9 +29,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
-
-<!-- No longer using the $_GET super variable, but using $_POST for more security -->
+<!-- No longer using the $_GET super variable, but using $_POST for more security -
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -40,19 +43,7 @@ if (isset($_POST['submit'])) {
     </div>
 </div>
 
-<!-- Usage of GET "just for demostration as the site is using POST now"
-<?php
-
-// echo $_GET['firstname'];
-// echo $_GET['lastname'];
-// echo $_GET['specialty'];
-// echo $_GET['dob'];
-// echo $_GET['email'];
-// echo $_GET['phone'];
-
-?>
--->
-
+->
 
 <?php
 require_once "includes/footer.php";
